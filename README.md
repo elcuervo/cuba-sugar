@@ -3,7 +3,7 @@ Cuba/Sugar
 
 _n_. bundled sugar for [cuba](https://github.com/soveran/cuba)
 
-![Cuba Sugar Cane Cutter In Field](http://maynardswitzer.com/library/Cuba/2002CubaSugarCaneCutterInField.A.jpg)
+!["See this fucking sugar road? I just fucking made it"](http://maynardswitzer.com/library/Cuba/2002CubaSugarCaneCutterInField.A.jpg)
 
 Description
 -----------
@@ -44,7 +44,6 @@ Like any other cuba app, but provides:
     Cuba.define do
       on get do
         on "weather" do
-          # create user
           as_json do
             {
               city:         'La Habana',
