@@ -56,6 +56,11 @@ Like any other cuba app, but provides:
       end
     end
 
+Contributors
+------------
+
+  * [bemurphy](https://github.com/bemurphy) (Brendon Murphy)
+
 Installation
 ------------
 
