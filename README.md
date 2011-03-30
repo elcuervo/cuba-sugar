@@ -34,6 +34,28 @@ Like any other cuba app, but provides:
       end
     end
 
+### as_json
+
+    require "cuba"
+    require "cuba/sugar"
+
+    Cuba.use Rack::Session::Cookie
+
+    Cuba.define do
+      on get do
+        on "weather" do
+          # create user
+          as_json do
+            {
+              city:         'La Habana',
+              temperature:  '19 °C',
+              pressure:     '1014 hPa',
+            }
+          end
+        end
+      end
+    end
+
 Installation
 ------------
 
