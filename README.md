@@ -2,6 +2,7 @@ Cuba/Sugar
 ==========
 
 ![Build Status](https://secure.travis-ci.org/elcuervo/cuba-sugar.png)
+
 _n_. bundled sugar for [cuba](https://github.com/soveran/cuba)
 
 !["See this fucking sugar road? I just fucking made it"](http://maynardswitzer.com/library/Cuba/2002CubaSugarCaneCutterInField.A.jpg)
