@@ -7,6 +7,9 @@ Gem::Specification.new do |s|
   s.email             = ["yo@brunoaguirre.com"]
   s.homepage          = "http://github.com/elcuervo/cuba-sugar"
   s.files = ["LICENSE", "README.md", "lib/cuba/sugar.rb"]
+
   s.add_dependency("cuba")
   s.add_dependency("json")
+
+  s.add_development_dependency("cutest")
 end
