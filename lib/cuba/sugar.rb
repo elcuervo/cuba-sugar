@@ -23,6 +23,8 @@ class Cuba
     end
   end
 
+  # This could be done in a better way within
+  # a Tilt helper...
   def csrf_tag
     Rack::Csrf.tag(env)
   end

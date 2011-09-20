@@ -4,7 +4,7 @@ test "set status and headers through helper" do
   Cuba.define do
     on "users" do
       as do
-        render "test/fixtures/csrf.erb", csrf_tag: Rack::Csrf.csrf_tag(env)
+        render "test/fixtures/csrf.erb"
       end
     end
   end
