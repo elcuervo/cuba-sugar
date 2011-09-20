@@ -84,6 +84,25 @@ Cuba.define do
 end
 ```
 
+### helpers
+
+```ruby
+require "cuba"
+require "cuba/sugar"
+
+Cuba.define do
+  helpers do
+    def now
+      Time.now
+    end
+  end
+
+  on "time" do
+    as { "The current time is: #{now}" }
+  end
+end
+```
+
 Contributors
 ------------
 
