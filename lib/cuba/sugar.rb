@@ -23,8 +23,12 @@ class Cuba
     end
   end
 
-  # This could be done in a better way within
-  # a Tilt helper...
+  # From sinatra/base
+  def helpers(*extensions, &block)
+    instance_eval(&block) if block_given?
+    include(*extensions)  if extensions.any?
+  end
+
   def csrf_tag
     Rack::Csrf.tag(env)
   end
