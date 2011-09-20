@@ -1,4 +1,5 @@
 require 'json'
+require "rack/csrf"
 
 class Cuba
   # Sugar to do some common response tasks
@@ -21,4 +22,13 @@ class Cuba
       (yield).to_json if block_given?
     end
   end
+
+  def csrf_tag
+    Rack::Csrf.tag(env)
+  end
+
+  def csrf_token
+    Rack::Csrf.token(env)
+  end
+
 end
