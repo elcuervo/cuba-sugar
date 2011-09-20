@@ -61,6 +61,29 @@ Cuba.define do
 end
 ```
 
+### csrf_tag && csrf_token
+
+In the forms:
+
+```ruby
+<%= csrf_tag %>
+```
+
+In the code:
+
+```ruby
+require "cuba"
+require "cuba/sugar"
+
+Cuba.use Rack::Csrf
+
+Cuba.define do
+  # Automatic csrf validation
+  on post
+  end
+end
+```
+
 Contributors
 ------------
 
