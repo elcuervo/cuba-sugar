@@ -2,6 +2,9 @@ require 'json'
 require "rack/csrf"
 
 class Cuba
+
+  def root; "".freeze; end
+
   # Sugar to do some common response tasks
   #
   # @example
@@ -23,10 +26,19 @@ class Cuba
     end
   end
 
+  def session
+    env["rack.session"]
+  end
+
+  def redirect(*args)
+    res.redirect(*args)
+    @matched = true
+  end
+
   # From sinatra/base
   def helpers(*extensions, &block)
     instance_eval(&block) if block_given?
-    include(*extensions)  if extensions.any?
+    extend(*extensions)   if extensions.any?
   end
 
   def csrf_tag
