@@ -3,7 +3,10 @@ require "rack/csrf"
 
 class Cuba
 
-  def root; "".freeze; end
+  def root; "" end
+  def options; req.options? end
+
+  def params; req.params end
 
   # Sugar to do some common response tasks
   #
