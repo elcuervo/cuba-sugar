@@ -110,6 +110,10 @@ require "cuba"
 require "cuba/sugar"
 
 Cuba.define do
+  on subdomain("wsdl") do
+    run WSDL
+  end
+
   on subdomain("api") do
     on root do
       as do
@@ -134,4 +138,6 @@ Contributors
 Installation
 ------------
 
-    $ gem install cuba-sugar
+```bash
+$ gem install cuba-sugar
+```
