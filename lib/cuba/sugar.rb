@@ -29,6 +29,10 @@ class Cuba
     end
   end
 
+  def subdomain(sub)
+    sub == req.host.split(".").first
+  end
+
   def session
     env["rack.session"]
   end
