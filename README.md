@@ -103,6 +103,29 @@ Cuba.define do
 end
 ```
 
+### subdomain
+
+```ruby
+require "cuba"
+require "cuba/sugar"
+
+Cuba.define do
+  on subdomain("api") do
+    on root do
+      as do
+        "Welcome to API"
+      end
+    end
+
+    on "users" do
+      as_json do
+        Users.all.to_json
+      end
+    end
+  end
+end
+```
+
 Contributors
 ------------
 
