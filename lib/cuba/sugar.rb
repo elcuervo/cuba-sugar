@@ -39,7 +39,6 @@ class Cuba
 
   def redirect(*args)
     res.redirect(*args)
-    @matched = true
   end
 
   # From sinatra/base
