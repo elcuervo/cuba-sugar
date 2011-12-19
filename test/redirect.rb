@@ -1,6 +1,7 @@
 require File.expand_path("helper", File.dirname(__FILE__))
 
 test "redirect helper" do
+  Cuba.plugin Cuba::Sugar
   Cuba.define do
     on "old" do
       redirect "/new"

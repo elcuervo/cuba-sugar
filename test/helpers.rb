@@ -1,6 +1,7 @@
 require File.expand_path("helper", File.dirname(__FILE__))
 
 test "set status and headers through helpers" do
+  Cuba.plugin Cuba::Sugar
   Cuba.define do
     helpers do
       def upperize(string)

@@ -1,7 +1,7 @@
-require 'json'
+require "cuba/contrib"
 require "rack/csrf"
 
-class Cuba
+module Cuba::Sugar
 
   # Sugar to access root of a page
   #
@@ -56,6 +56,7 @@ class Cuba
   #   end
   # end
   def as_json(http_code = 200, extra_headers = {})
+    require 'json'
     extra_headers["Content-Type"] ||= "application/json"
     as(http_code, extra_headers) do
       (yield).to_json if block_given?

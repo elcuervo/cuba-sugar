@@ -3,6 +3,8 @@ require 'json'
 
 test "set a block to return json" do
   rum_and_coke = { "rum" => "hot", "coke" => "sweet" }
+
+  Cuba.plugin Cuba::Sugar
   Cuba.define do
     on "drinks" do
       as_json 201, {"Content-Location" => "http://somewhere.com/drinks/42"} do
