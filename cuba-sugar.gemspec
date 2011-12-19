@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = "cuba-sugar"
-  s.version           = "0.2.1"
+  s.version           = "0.2.2"
   s.summary           = "Give Cuba some Sugar!"
-  s.description       = "Bundled contrib utils to use with cuba"
+  s.description       = "Useful stuff to use with cuba-contrib"
   s.authors           = ["elcuervo"]
   s.email             = ["yo@brunoaguirre.com"]
   s.homepage          = "http://github.com/elcuervo/cuba-sugar"
