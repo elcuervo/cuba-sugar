@@ -26,6 +26,7 @@ require "cuba/sugar"
 
 Cuba.use Rack::Session::Cookie
 
+Cuba.plugin Cuba::Sugar
 Cuba.define do
   on post do
     on "users" do
@@ -46,6 +47,7 @@ require "cuba/sugar"
 
 Cuba.use Rack::Session::Cookie
 
+Cuba.plugin Cuba::Sugar
 Cuba.define do
   on get do
     on "weather" do
@@ -77,6 +79,7 @@ require "cuba/sugar"
 
 Cuba.use Rack::Csrf
 
+Cuba.plugin Cuba::Sugar
 Cuba.define do
   # Automatic csrf validation
   on post
@@ -90,6 +93,7 @@ end
 require "cuba"
 require "cuba/sugar"
 
+Cuba.plugin Cuba::Sugar
 Cuba.define do
   helpers do
     def now
@@ -109,6 +113,7 @@ end
 require "cuba"
 require "cuba/sugar"
 
+Cuba.plugin Cuba::Sugar
 Cuba.define do
   on subdomain("wsdl") do
     run WSDL
