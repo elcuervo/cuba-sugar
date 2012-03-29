@@ -22,6 +22,6 @@ test "eval only in a given subdomain" do
   _, _, sub_resp = Cuba.call(subdomain_env)
   _, _, resp = Cuba.call(standard_env)
 
-  assert_equal ["Subdomain"], sub_resp.body
-  assert_equal ["Main"], resp.body
+  assert_equal ["Subdomain"], sub_resp
+  assert_equal ["Main"], resp
 end

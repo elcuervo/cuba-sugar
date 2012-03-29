@@ -10,8 +10,8 @@ test "redirect helper" do
 
   env = { "SCRIPT_NAME" => "/", "PATH_INFO" => "/old" }
 
-  _, _, resp = Cuba.call(env)
+  code, headers, _ = Cuba.call(env)
 
-  assert_equal 302, resp.status
-  assert_equal "/new", resp.headers["Location"]
+  assert_equal 302, code
+  assert_equal "/new", headers["Location"]
 end

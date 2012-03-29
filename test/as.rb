@@ -12,9 +12,9 @@ test "set status and headers through helper" do
 
   env = { "SCRIPT_NAME" => "/", "PATH_INFO" => "/users" }
 
-  _, _, resp = Cuba.call(env)
+  code, headers, resp = Cuba.call(env)
 
-  assert_equal 201, resp.status
-  assert_equal ["User Created"], resp.body
-  assert_equal "http://somewhere.com/users/705", resp.headers["Content-Location"]
+  assert_equal 201, code
+  assert_equal ["User Created"], resp
+  assert_equal "http://somewhere.com/users/705", headers["Content-Location"]
 end

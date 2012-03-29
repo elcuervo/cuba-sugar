@@ -1,17 +1,6 @@
-require "cuba/contrib"
 require "rack/csrf"
 
 module Cuba::Sugar
-
-  # Sugar to access root of a page
-  #
-  # @example
-  # on post, root do
-  #   as do
-  #     "Welcome!"
-  #   end
-  # end
-  def root; "" end
 
   # Sugar to access an option verb
   #

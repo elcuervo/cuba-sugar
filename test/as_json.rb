@@ -15,10 +15,10 @@ test "set a block to return json" do
 
   env = { "SCRIPT_NAME" => "/", "PATH_INFO" => "/drinks" }
 
-  _, _, resp = Cuba.call(env)
+  code, headers, resp = Cuba.call(env)
 
-  assert_equal 201, resp.status
-  assert_equal "application/json", resp.headers["Content-Type"]
-  assert_equal [rum_and_coke.to_json], resp.body
-  assert_equal "http://somewhere.com/drinks/42", resp.headers["Content-Location"]
+  assert_equal 201, code
+  assert_equal "application/json", headers["Content-Type"]
+  assert_equal [rum_and_coke.to_json], resp
+  assert_equal "http://somewhere.com/drinks/42", headers["Content-Location"]
 end

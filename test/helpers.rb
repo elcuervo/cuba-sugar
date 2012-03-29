@@ -20,5 +20,5 @@ test "set status and headers through helpers" do
 
   _, _, resp = Cuba.call(env)
 
-  assert_equal ["I will shout: HELLO"], resp.body
+  assert_equal ["I will shout: HELLO"], resp
 end
