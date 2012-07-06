@@ -30,9 +30,11 @@ require "cuba"
 require "cuba/sugar/content_for"
 
 Cuba.plugin Cuba::Sugar::ContentFor
+```
 
-# In your views to define where the content block will be rendered
+In your views to define where the content block will be rendered
 
+```erb
 <% yield_for :menu %>
 
 # And when you want to define a content
