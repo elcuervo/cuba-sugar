@@ -1,7 +1,8 @@
 require File.expand_path("helper", File.dirname(__FILE__))
+require 'cuba/sugar/as'
 
 test "set status and headers through helper" do
-  Cuba.plugin Cuba::Sugar
+  Cuba.plugin Cuba::Sugar::As
   Cuba.define do
     on "users" do
       as 201, {"Content-Location" => "http://somewhere.com/users/705"} do

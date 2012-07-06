@@ -1,7 +1,10 @@
 require File.expand_path("helper", File.dirname(__FILE__))
+require 'cuba/sugar/as'
+require 'cuba/sugar/routes'
 
 test "eval only in a given subdomain" do
-  Cuba.plugin Cuba::Sugar
+  Cuba.plugin Cuba::Sugar::As
+  Cuba.plugin Cuba::Sugar::Routes
   Cuba.define do
     on subdomain("api"), root do
       as do

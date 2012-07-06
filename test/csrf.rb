@@ -1,8 +1,11 @@
 require File.expand_path("helper", File.dirname(__FILE__))
 require 'cuba/render'
+require 'cuba/sugar/as'
+require 'cuba/sugar/csrf'
 
 test "set status and headers through helper" do
-  Cuba.plugin Cuba::Sugar
+  Cuba.plugin Cuba::Sugar::As
+  Cuba.plugin Cuba::Sugar::Csrf
   Cuba.plugin Cuba::Render
   Cuba.define do
     on "users" do

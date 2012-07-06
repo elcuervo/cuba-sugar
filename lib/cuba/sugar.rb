@@ -1,123 +1,28 @@
-require "rack/csrf"
+require 'cuba/sugar/as'
+require 'cuba/sugar/csrf'
+require 'cuba/sugar/routes'
+require 'cuba/sugar/content_for'
 
 module Cuba::Sugar
+  include As
+  include Csrf
+  include Routes
+  include ContentFor
 
-  # Sugar to access an option verb
+  # Public: Sugar to include helpers
   #
-  # @example
-  # on options do
-  #   as_json do
-  #     API.interaction_methods
+  # *extensions - Modules to be evaluated
+  # &block      - Methods to be included
+  #
+  # Examples:
+  #
+  #   helpers do
+  #     def now
+  #       Time.now
+  #     end
   #   end
-  # end
-  def options; req.options? end
-
-  # Sugar to easily access params
-  #
-  # @example
-  # on get, root do
-  #   as do
-  #     "This id: #{params['id']}"
-  #   end
-  # end
-  def params; req.params end
-
-  # Sugar to do some common response tasks
-  #
-  # @example
-  # on post, "users" do
-  #   as 201 do
-  #     "User successfully created!"
-  #   end
-  # end
-  def as(http_code = 200, extra_headers = {})
-    res.status = http_code
-    res.headers.merge! extra_headers
-    res.write yield if block_given?
-  end
-
-  # Sugar to do some common response tasks as_json
-  #
-  # @example
-  # on post, "users" do
-  #   as_json 201 do
-  #     "User successfully created!"
-  #   end
-  # end
-  def as_json(http_code = 200, extra_headers = {})
-    require 'json'
-    extra_headers["Content-Type"] ||= "application/json"
-    as(http_code, extra_headers) do
-      (yield).to_json if block_given?
-    end
-  end
-
-  # Sugar to do match a given subdomain.
-  # eg. blog.example.com
-  #
-  # @example
-  # on subdomain("blog") do
-  #   as do
-  #     run Blog
-  #   end
-  # end
-  def subdomain(sub)
-    sub == req.host.split(".").first
-  end
-
-  # Sugar to access session info
-  #
-  # @example
-  # on root do
-  #   as do
-  #     "User name: #{session['name']}"
-  #   end
-  # end
-  def session
-    env["rack.session"]
-  end
-
-  # Sugar to redirect a request
-  #
-  # @example
-  # on "old" do
-  #   redirect "/new"
-  # end
-  def redirect(*args)
-    res.redirect(*args)
-  end
-
-  # Sugar to include helpers and access them from
-  # views
-  #
-  # @example
-  # helpers do
-  #   def now
-  #     Time.now
-  #   end
-  # end
   def helpers(*extensions, &block)
-    instance_eval(&block) if block_given?
+    instance_eval(&block) if block
     extend(*extensions)   if extensions.any?
   end
-
-  # Sugar to include a csrf tag
-  #
-  # @example
-  # <form action="/new">
-  #   <%= csrf_tag %>
-  #   <input type="text" />
-  # </form>
-  def csrf_tag
-    Rack::Csrf.tag(env)
-  end
-
-  # Sugar to access the csrf token
-  #
-  # @example
-  # <%= csrf_token %>
-  def csrf_token
-    Rack::Csrf.token(env)
-  end
-
 end

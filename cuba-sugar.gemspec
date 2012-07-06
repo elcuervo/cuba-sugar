@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "cuba-sugar"
-  s.version           = "0.2.4"
+  s.version           = "0.3.0"
   s.summary           = "Give Cuba some Sugar!"
   s.description       = "Useful stuff to use with cuba"
   s.authors           = ["elcuervo"]
@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.files             = `git ls-files`.split("\n")
   s.test_files        = `git ls-files test`.split("\n")
 
-  s.add_dependency("cuba", "~> 3.0")
-  s.add_dependency("json", "~> 1.6.6")
+  s.add_dependency("cuba", "~> 3.1.0")
+  s.add_dependency("json", "~> 1.7.3")
   s.add_dependency("rack_csrf", "~> 2.4.0")
 
   s.add_development_dependency("cutest", "~> 1.1.3")

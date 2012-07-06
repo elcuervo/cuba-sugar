@@ -1,10 +1,10 @@
 require File.expand_path("helper", File.dirname(__FILE__))
-require 'json'
+require 'cuba/sugar/as'
 
 test "set a block to return json" do
   rum_and_coke = { "rum" => "hot", "coke" => "sweet" }
 
-  Cuba.plugin Cuba::Sugar
+  Cuba.plugin Cuba::Sugar::As
   Cuba.define do
     on "drinks" do
       as_json 201, {"Content-Location" => "http://somewhere.com/drinks/42"} do

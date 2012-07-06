@@ -18,15 +18,41 @@ Usage
 
 Like any other cuba app, but provides:
 
+You have two choices:
+
+* `require` only the tool you want eg: `require 'cuba/sugar/content_for'`
+* `require` all the tools eg: `require 'cuba/sugar'`
+
+### content_for
+
+```ruby
+require "cuba"
+require "cuba/sugar/content_for"
+
+Cuba.plugin Cuba::Sugar::ContentFor
+
+# In your views to define where the content block will be rendered
+
+<% yield_for :menu %>
+
+# And when you want to define a content
+<% content_for :menu %>
+  <ul id="menu">
+    <li class="active">Home</li>
+    <li>Users</li>
+  </ul>
+<% end %>
+```
+
 ### as
 
 ```ruby
 require "cuba"
-require "cuba/sugar"
+require "cuba/sugar/as"
 
 Cuba.use Rack::Session::Cookie
 
-Cuba.plugin Cuba::Sugar
+Cuba.plugin Cuba::Sugar::As
 Cuba.define do
   on post do
     on "users" do
@@ -43,11 +69,11 @@ end
 
 ```ruby
 require "cuba"
-require "cuba/sugar"
+require "cuba/sugar/as"
 
 Cuba.use Rack::Session::Cookie
 
-Cuba.plugin Cuba::Sugar
+Cuba.plugin Cuba::Sugar::As
 Cuba.define do
   on get do
     on "weather" do
@@ -75,11 +101,11 @@ In the code:
 
 ```ruby
 require "cuba"
-require "cuba/sugar"
+require "cuba/sugar/csrf"
 
 Cuba.use Rack::Csrf
 
-Cuba.plugin Cuba::Sugar
+Cuba.plugin Cuba::Sugar::Csrf
 Cuba.define do
   # Automatic csrf validation
   on post
@@ -111,9 +137,9 @@ end
 
 ```ruby
 require "cuba"
-require "cuba/sugar"
+require "cuba/sugar/routes"
 
-Cuba.plugin Cuba::Sugar
+Cuba.plugin Cuba::Sugar::Routes
 Cuba.define do
   on subdomain("wsdl") do
     run WSDL
