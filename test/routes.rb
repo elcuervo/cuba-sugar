@@ -1,6 +1,6 @@
-require File.expand_path("helper", File.dirname(__FILE__))
-require 'cuba/sugar/as'
-require 'cuba/sugar/routes'
+require "test_helper"
+require "cuba/sugar/as"
+require "cuba/sugar/routes"
 
 test "eval only in a given subdomain" do
   Cuba.plugin Cuba::Sugar::As

@@ -1,5 +1,5 @@
-require File.expand_path("helper", File.dirname(__FILE__))
-require 'cuba/sugar'
+require "test_helper"
+require "cuba/sugar"
 
 test "set status and headers through helpers" do
   Cuba.plugin Cuba::Sugar

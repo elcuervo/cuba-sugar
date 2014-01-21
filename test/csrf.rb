@@ -1,7 +1,7 @@
-require File.expand_path("helper", File.dirname(__FILE__))
-require 'cuba/render'
-require 'cuba/sugar/as'
-require 'cuba/sugar/csrf'
+require "test_helper"
+require "cuba/render"
+require "cuba/sugar/as"
+require "cuba/sugar/csrf"
 
 test "set status and headers through helper" do
   Cuba.plugin Cuba::Sugar::As
@@ -15,7 +15,7 @@ test "set status and headers through helper" do
     end
   end
 
-  env = { "SCRIPT_NAME" => "/", "PATH_INFO" => "/users", 'rack.session' => {} }
+  env = { "SCRIPT_NAME" => "/", "PATH_INFO" => "/users", "rack.session" => {} }
 
   code, headers, resp = Cuba.call(env)
 
