@@ -15,7 +15,7 @@ module Cuba::Sugar
     def as(http_code = 200, extra_headers = {}, &block)
       res.status = http_code
       res.headers.merge! extra_headers
-      res.write yield if block
+      yield if block
     end
 
     # Public: Sugar to do some common response tasks as_json

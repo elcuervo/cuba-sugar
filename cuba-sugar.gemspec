@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency("cuba",      "~> 3.1.0")
   s.add_dependency("rack_csrf", "~> 2.4.0")
+  s.add_dependency("cuba",      ">= 3.1.0")
 
-  s.add_development_dependency("cutest", "~> 1.1.3")
-  s.add_development_dependency("tilt",   "~> 1.3.3")
+  s.add_development_dependency("cutest", ">= 1.1.3")
+  s.add_development_dependency("tilt",   ">= 1.3.3")
 end
