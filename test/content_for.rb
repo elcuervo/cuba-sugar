@@ -1,4 +1,4 @@
-require "test_helper"
+require File.expand_path "../test_helper", __FILE__
 require "cuba/render"
 require "cuba/sugar/content_for"
 
@@ -20,6 +20,6 @@ scope do
   test "content for the menu" do
     _, _, body = Cuba.call({ "PATH_INFO" => "/", "SCRIPT_NAME" => "/" })
 
-    assert_equal body, ["  alpha\nbeta\ngamma\n\n"]
+    assert_equal body, ["  alpha\nbeta\ngamma\n"]
   end
 end
