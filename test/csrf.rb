@@ -1,4 +1,4 @@
-require "test_helper"
+require_relative "test_helper"
 require "cuba/render"
 require "cuba/sugar/as"
 require "cuba/sugar/csrf"
@@ -7,10 +7,14 @@ test "set status and headers through helper" do
   Cuba.plugin Cuba::Sugar::As
   Cuba.plugin Cuba::Sugar::Csrf
   Cuba.plugin Cuba::Render
+
+  Cuba.settings[:render][:views] = "./test/fixtures"
+  Cuba.settings[:render][:template_engine] = "erb"
+
   Cuba.define do
     on "users" do
       as do
-        render "test/fixtures/csrf.erb"
+        partial "csrf"
       end
     end
   end
