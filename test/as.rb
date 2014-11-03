@@ -1,4 +1,4 @@
-require "test_helper"
+require_relative "test_helper"
 require "cuba/sugar/as"
 
 test "set status and headers through helper" do
