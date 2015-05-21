@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "cuba-sugar"
-  s.version           = "0.3.0"
+  s.version           = "0.3.1"
   s.summary           = "Give Cuba some Sugar!"
   s.description       = "Useful stuff to use with cuba"
   s.authors           = ["elcuervo"]
