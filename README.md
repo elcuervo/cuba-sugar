@@ -38,7 +38,7 @@ In your views to define where the content block will be rendered
 <% yield_for :menu %>
 
 # And when you want to define a content
-<% content_for :menu %>
+<% content_for :menu do %>
   <ul id="menu">
     <li class="active">Home</li>
     <li>Users</li>
